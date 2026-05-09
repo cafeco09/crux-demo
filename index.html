@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CruX — Feature request MVP for X</title>
+  <meta name="description" content="CruX is a feature request MVP for X posts that deserve deeper reasoning, not just reactions." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <main class="shell">
+    <nav class="topbar" aria-label="CruX navigation">
+      <a class="brand" href="#top" aria-label="CruX home">Cru<span>X</span></a>
+      <div class="nav-actions">
+        <a href="#how">How it works</a>
+        <a href="#demo">Demo room</a>
+      </div>
+    </nav>
+
+    <section id="top" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Feature request MVP for X</p>
+        <h1>X helps ideas spread. CruX helps them go deeper.</h1>
+        <p class="lead">
+          A proposed interaction layer for high-signal posts: people take a side,
+          explain why, strengthen their reasoning, and leave with a shareable map of the crux.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">Try the demo</a>
+          <button class="button ghost" id="resetDemo" type="button">Reset demo</button>
+        </div>
+
+        <p class="disclaimer">
+          Public prototype. No login. No API keys. Demo data runs locally in your browser.
+          Not affiliated with X.
+        </p>
+      </div>
+
+      <aside class="post-card hero-post" aria-label="Demo X post">
+        <div class="post-head">
+          <div class="avatar">X</div>
+          <div>
+            <strong>@crux_demo_creator</strong>
+            <span>demo post</span>
+          </div>
+        </div>
+        <p>
+          X has helped millions of people discover ideas, communities and opportunities.
+          What if high-signal posts could also open deeper rooms?
+        </p>
+        <div class="post-metrics">
+          <span>184 likes</span>
+          <span>37 replies</span>
+          <span>22 reposts</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="how" class="how-section">
+      <div class="section-heading">
+        <p class="eyebrow small">How CruX works</p>
+        <h2>Simple rules, clearer conversations.</h2>
+      </div>
+
+      <div class="flow" aria-label="CruX flow">
+        <article>
+          <span>01</span>
+          <h3>50 likes</h3>
+          <p>A post shows enough signal for the creator to activate CruX.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>15 people</h3>
+          <p>People choose For, Against or Still Thinking and add a reason.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>5 days</h3>
+          <p>The room stays open so participants can improve the reasoning.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Final map</h3>
+          <p>CruX closes with a shareable summary of what people actually thought.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="demo" class="demo-section">
+      <div class="section-heading demo-heading">
+        <div>
+          <p class="eyebrow small">Interactive demo</p>
+          <h2>Enter the CruX room.</h2>
+        </div>
+        <p class="muted">
+          Try the room like a participant: join a lane, add a reason, strengthen an argument,
+          then view the final CruX Map.
+        </p>
+      </div>
+
+      <section class="room">
+        <div class="room-top">
+          <div>
+            <span class="status-pill">Live demo room</span>
+            <h2>Could X help people move from discovering ideas to understanding them more deeply?</h2>
+          </div>
+          <div class="mini-stats">
+            <div><strong>184</strong><span>likes</span></div>
+            <div><strong id="participantCount">16</strong><span>positions</span></div>
+            <div><strong>5</strong><span>days</span></div>
+          </div>
+        </div>
+
+        <div class="room-grid">
+          <aside class="room-left">
+            <div class="post-card">
+              <div class="post-head">
+                <div class="avatar">X</div>
+                <div>
+                  <strong>@crux_demo_creator</strong>
+                  <span>demo post</span>
+                </div>
+              </div>
+              <p>
+                X has helped millions of people discover ideas, communities and opportunities.
+                What if high-signal posts could also open deeper rooms?
+              </p>
+              <div class="post-metrics">
+                <span>184 likes</span>
+                <span>37 replies</span>
+                <span>22 reposts</span>
+              </div>
+            </div>
+
+            <div class="room-state-card">
+              <h3>Room state</h3>
+              <p>Labels stay visible, not just colours.</p>
+              <div id="roomStateBars"></div>
+              <div class="insight-chip">
+                <span aria-hidden="true">✦</span>
+                Insights update as reasoning grows
+              </div>
+            </div>
+          </aside>
+
+          <section class="room-main">
+            <div class="tabs" role="tablist" aria-label="CruX demo tabs">
+              <button class="tab active" data-tab="join" type="button">Join</button>
+              <button class="tab" data-tab="insights" type="button">Insights</button>
+              <button class="tab" data-tab="arguments" type="button">Arguments</button>
+              <button class="tab" data-tab="final" type="button">Final Map</button>
+            </div>
+
+            <div id="tabContent" class="tab-content"></div>
+          </section>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <span>X helps ideas spread. CruX helps them go deeper.</span>
+      <span>prototype concept · not affiliated with X</span>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
